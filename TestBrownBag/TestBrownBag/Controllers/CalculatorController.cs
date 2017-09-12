@@ -40,7 +40,9 @@ namespace TestBrownBag.Controllers
         [HttpGet]
         public int Divide(int value1, int value2)
         {
-            return value1 / value2;
+            _calculator.FirstNumber = value1;
+            _calculator.SecondNumber = value2;
+            return _calculator.Divide();
         }
 
 

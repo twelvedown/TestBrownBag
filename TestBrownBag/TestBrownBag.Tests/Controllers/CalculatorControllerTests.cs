@@ -36,7 +36,9 @@ namespace TestBrownBag.Controllers.Tests
         [TestMethod()]
         public void DivideTest()
         {
-            Assert.Fail();
+            var controller = new CalculatorController();
+            var add = controller.Divide(6, 2);
+            Assert.AreEqual(add, 3);
         }
 
         [TestMethod()]

@@ -35,11 +35,18 @@ namespace TestBrownBag.Specs
             result = calculator.Subtract();
         }
 
+        [When(@"I press divide")]
+        public void WhenIPressDivide()
+        {
+            result = calculator.Divide();
+        }
+
         [Then(@"the result should be (.*) on the screen")]
         public void ThenTheResultShouldBeOnTheScreen(int expectedResult)
         {
             Assert.AreEqual(expectedResult, result);
         }
+
 
     }
 }
