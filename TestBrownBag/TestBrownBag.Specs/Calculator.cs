@@ -6,10 +6,10 @@ using TestBrownBag.Service;
 namespace TestBrownBag.Specs
 {
     [Binding]
-    public class CalculatorSteps
+    public class Calculator
     {
         private int result { get; set; }
-        private Calculator calculator = new Calculator();
+        private Service.Calculator calculator = new Service.Calculator();
 
         [Given(@"I have entered (.*) into the calculator")]
         public void GivenIHaveEnteredIntoTheCalculator(int number)
@@ -29,10 +29,17 @@ namespace TestBrownBag.Specs
             result = calculator.Add();
         }
 
+        [When(@"I press subtract")]
+        public void WhenIPressSubtract()
+        {
+            result = calculator.Subtract();
+        }
+
         [Then(@"the result should be (.*) on the screen")]
         public void ThenTheResultShouldBeOnTheScreen(int expectedResult)
         {
             Assert.AreEqual(expectedResult, result);
         }
+
     }
 }

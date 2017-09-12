@@ -10,14 +10,19 @@ namespace TestBrownBag.Controllers
 {
     public class CalculatorController : ApiController
     {
+        private Calculator _calculator;
+
+        public CalculatorController()
+        {
+            _calculator = new Calculator();
+        }
 
         [HttpGet]
         public int Add(int value1, int value2)
         {
-            var calculator = new Calculator();
-            calculator.FirstNumber = value1;
-            calculator.SecondNumber = value2;
-            return calculator.Add();
+            _calculator.FirstNumber = value1;
+            _calculator.SecondNumber = value2;
+            return _calculator.Add();
         }
 
         [HttpGet]

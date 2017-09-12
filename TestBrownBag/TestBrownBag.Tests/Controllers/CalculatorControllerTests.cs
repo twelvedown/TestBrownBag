@@ -22,7 +22,9 @@ namespace TestBrownBag.Controllers.Tests
         [TestMethod()]
         public void SubstractTest()
         {
-            Assert.Fail();
+            var controller = new CalculatorController();
+            var add = controller.Substract(5,2);
+            Assert.AreEqual(add, 3);
         }
 
         [TestMethod()]

@@ -14,5 +14,10 @@ namespace TestBrownBag.Service
         {
             return FirstNumber + SecondNumber;
         }
+
+        public int Subtract()
+        {
+            return FirstNumber - SecondNumber;
+        }
     }
 }
